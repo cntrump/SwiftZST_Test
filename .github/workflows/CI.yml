@@ -1,0 +1,19 @@
+name: "SwiftZST_Test CI"
+on: 
+  push:
+    branches:
+      - main 
+      - master
+  pull_request:
+    branches: 
+      - '*'
+jobs:
+  macOS:
+    name: Unit Test macOS
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Test
+        run: swift test
+
